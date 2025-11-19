@@ -4,34 +4,16 @@ pipeline {
     }
 
     environment {
-        // key = value
-        course = "Kubernetes"
-        name = "Siva"
-        cloud = "AZURE"
+        COURSE = "Kubernetes"
+        GITHUB_CREDS = credentials('i27devopsb8_github_pat')
     }
-
     stages {
-        stage('FirstStage') {
-            environment {
-                cloud = "GCP"
-            }
+        stage ('Build') {
             steps {
-                echo "**** Building the application in First Stage*****"
-                echo "**** Welcome ${name} *******"
-                echo "**** You enrolled to ${course} , All the best ${name}*****"
-                echo "**** You are certified in ${cloud} cloud"
-            }
-        }
-        stage ('SecondStage'){
-            steps {
-                echo "**** Building the application in Second Stage *****"
-                echo "**** Welcome ${name} *******"
-                echo "**** You enrolled to ${course} , All the best ${name}*****"
-                echo "**** You are certified in ${cloud} cloud"
+                echo "My Github Credentials are ${GITHUB_CREDS}"
+                echo "My user name is: ${GITHUB_CREDS_USR}"
+                echo "MY Password is: ${GITHUB_CREDS_PSW}"
             }
         }
     }
 }
-
-// ${env.variable}
-// ${params.varible}
