@@ -33,9 +33,8 @@ pipeline {
         }
         stage ('DeploytoProd') {
             when {
-                expression {
-                    BRANCH_NAME ==~ /(production|staging)/
-                }
+                //v1.2.3
+                tag pattern: "v\\d{1,2}.\\d{1,2}.\\d{1,2}", comparator: "REGEXP"
             }
             steps {
                 echo "***** Deploying to Prod env ******"
