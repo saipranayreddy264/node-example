@@ -11,7 +11,7 @@ pipeline {
         stage ('Build stage') {
             steps {
                 echo ("this is the building")
-                echo ("welcome to ${cousre} classes")
+                echo ("welcome to ${course} classes")
                 echo ("this is done by ${name}")
 
             }
