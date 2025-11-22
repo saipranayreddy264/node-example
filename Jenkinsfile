@@ -1,5 +1,5 @@
 pipeline {
-    agnet {
+    agent {
         label ('java-slave')
     }
     // define envinronmentsl variables
