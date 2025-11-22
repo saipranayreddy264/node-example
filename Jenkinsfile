@@ -1,33 +1,19 @@
 pipeline {
-    agent {
-        label 'java-slave'
+    agnet {
+        label ('java-slave')
+    }
+    // define envinronmentsl variables
+    environment {
+        name = "sai"
+        course = "jenkins"
     }
     stages {
-        stage ('Build') {
+        stage ('Build stage') {
             steps {
-                echo "Building the application"
-            }
-        }
-        stage('ParallelStageScans') {
-            parallel {
-                stage ('Sonar') {
-                    steps {
-                        echo "Sonar Stage is executing"
-                        sleep 10
-                    }
-                }
-                stage ('Fortify') {
-                    steps {
-                        echo "Fortify Stage is executing"
-                        sleep 10
-                    }
-                }
-                stage ('Prisma') {
-                    steps {
-                        echo "Prisma Stage is executing"
-                        sleep 10
-                    }
-                }
+                echo ("this is the building")
+                echo ("welcome to ${cousre} classes")
+                echo ("this is done by ${name}")
+
             }
         }
     }
