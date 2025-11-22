@@ -1,19 +1,16 @@
 pipeline {
     agent {
-        label ('java-slave')
+        label 'java-slave'
     }
-    // define envinronmentsl variables
     environment {
-        name = "sai"
-        course = "jenkins"
+        GITHUB_CREDS = credentials('saipranay_github_pat')
     }
     stages {
-        stage ('Build stage') {
+        stage ('build stage') {
             steps {
-                echo ("this is the building")
-                echo ("welcome to ${course} classes")
-                echo ("this is done by ${name}")
-
+                echo ("my github credentials are ${GITHUB_CREDS}")
+                echo ("my github user name is ${GITHUB_USR}")
+                echo ("my github password is ${GITHUB_PSW}")
             }
         }
     }
