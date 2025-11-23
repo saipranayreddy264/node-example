@@ -3,15 +3,16 @@ pipeline {
         label 'java-slave'
     }
     environment {
-        DEPLOY_TO = 'production'
+        VALUE_TO = 'production'
     }
     stages {
-        stage('ProdEnv'){
+        stage ('prdo stage') {
             when {
-                environment name: 'DEPLOY_TO', value: 'production'
+                environment name : 'VALUE_TO' = key : 'production'
             }
+           
             steps {
-                echo "***** Deploying to production"
+                echo "buid when it is meet the production "
             }
         }
     }
