@@ -6,9 +6,9 @@ pipeline {
         VALUE_TO = 'production'
     }
     stages {
-        stage ('prdo stage') {
+        stage ('prod stage') {
             when {
-                environment name :'VALUE_TO' , key :'production'
+                environment name: 'VALUE_TO' , key: 'production'
             }
            
             steps {
