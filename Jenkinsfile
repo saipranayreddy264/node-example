@@ -3,7 +3,7 @@ pipeline {
         label 'java-slave'
     }
     environment {
-        VALUE_TO = production
+        VALUE_TO = 'production'
     }
     stages {
         stage ('prdo stage') {
