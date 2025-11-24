@@ -4,8 +4,8 @@ pipeline {
     }
     parameter {
         string (
-            name: 'PERSON'
-            defaultvalue: 'Sai'
+            name: 'PERSON',
+            defaultvalue: 'Sai',
             description: 'what is your name'
         )
         
