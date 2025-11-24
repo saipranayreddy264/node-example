@@ -2,7 +2,7 @@ pipeline {
     agent {
         label 'java-slave'
     }
-    parameter {
+    parameters {
         string (
             name: 'PERSON',
             defaultvalue: 'Sai',
