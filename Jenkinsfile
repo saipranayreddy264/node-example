@@ -13,7 +13,7 @@ pipeline {
     stages {
         stage (parameterstage) {
             steps {
-                echo "this is parameter stage by sai"
+                echo "this is parameter stage by , ${params.PERSON}"
             }
         }
     }
