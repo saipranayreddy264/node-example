@@ -2,15 +2,18 @@ pipeline {
     agent {
         label 'java-slave'
     }
-    environment {
-        GITHUB_CREDS = credentials('saipranay_github_pat')
+    parameter {
+        string (
+            name: 'PERSON'
+            defaultvalue: 'Sai'
+            description: 'what is your name'
+        )
+        
     }
     stages {
-        stage ('build stage') {
+        stage (parameterstage) {
             steps {
-                echo ("my github credentials are ${GITHUB_CREDS}")
-                echo ("my github user name is ${GITHUB_CREDS_USR}")
-                echo ("my github password is ${GITHUB_CREDS_PSW}")
+                echo "this is parameter stage by sai"
             }
         }
     }
