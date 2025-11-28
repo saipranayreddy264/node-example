@@ -10,7 +10,7 @@ pipeline {
         }
     }
     post {
-        sucess {
+        success {
             echo "post the sucess is trigged"
 
         }
