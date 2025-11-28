@@ -1,20 +1,27 @@
 pipeline {
     agent {
-        label 'java-slave'
-    }
-    parameters {
-        string (
-            name: 'PERSON',
-            defaultValue: 'Sai',
-            description: 'what is your name???'
-        )
-        
+        label "java-slave"
     }
     stages {
-        stage (parameterstage) {
+        stage (build stage) {
             steps {
-                echo "this is parameter stage by , ${params.PERSON}"
+                echo "this is a build stage"
             }
+        }
+    }
+    post {
+        sucess {
+            echo "post the sucess is trigged"
+
+        }
+        failure {
+            echo "failure is trigger"
+
+
+        }
+        always {
+            echo "sucess is triggered"
+
         }
     }
 }
